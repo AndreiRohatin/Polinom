@@ -1,1 +1,3 @@
 # Polinom
+# Proiect pentru laborator
+ 
