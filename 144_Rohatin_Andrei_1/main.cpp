@@ -23,8 +23,8 @@ std::istream& operator>>(std::istream& is, Polinom& x){
     std::cout<<"Introduceti coeficientii polinomului separati printr-un spatiu, de la mare la mic \n";
     unsigned n=x.length;
     std::vector<double> coef;
-    //linia am vrut sa o folosesc la debug deoarece imi spunea ca nu are acces
-    //dupa ce am adaugat-o a disparut mesajul de eroare
+    //alocare memorie pentru cele n pozitii 
+    coef.resize(n);
 
     for(;n>0;n--){
         double item;
