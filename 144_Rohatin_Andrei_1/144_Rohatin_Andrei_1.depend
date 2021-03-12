@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1615506780 source:c:\users\rohat\desktop\144_rohatin_andrei_1\src\polinom.cpp
+	"Polinom.h"
+
+1615506498 c:\users\rohat\desktop\144_rohatin_andrei_1\include\polinom.h
+	<vector>
+	<cmath>
+	<iostream>
+
+1615507666 source:c:\users\rohat\desktop\144_rohatin_andrei_1\main.cpp
+	"Polinom.h"
+	<string.h>
+
