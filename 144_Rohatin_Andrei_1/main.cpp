@@ -9,7 +9,7 @@ std::ostream& operator<<(std::ostream& os, const Polinom& x) {
 	os << "Gradul polinomului este: " << x.length << "\n";
 	unsigned n = x.length;
 	for (; n > 0; n--)
-		if (x.coef[n] > 0)
+		if (x.coef[n-1] > 0)
 			os << "+" << x.coef[n-1] << "*x^" << n-1;
 		else if (x.coef[n-1] < 0)
 			os << x.coef[n-1] << "*x^" << n-1;
@@ -18,20 +18,18 @@ std::ostream& operator<<(std::ostream& os, const Polinom& x) {
 }
 
 std::istream& operator>>(std::istream& is, Polinom& x){
+    //modificat in timpul laboratorului
     std::cout<<"Introduceti gradul polinomului: ";
     is>>x.length;
     std::cout<<"Introduceti coeficientii polinomului separati printr-un spatiu, de la mare la mic \n";
     unsigned n=x.length;
-    std::vector<double> coef;
-    //alocare memorie pentru cele n pozitii 
-    coef.resize(n);
-
+    //linia am vrut sa o folosesc la debug deoarece imi spunea ca nu are acces
+    //dupa ce am adaugat-o a disparut mesajul de eroare
     for(;n>0;n--){
         double item;
         is>>item;
-        coef.push_back(item);
+        x.coef.push_back(item);
     }
-    x.coef=coef;
     //is>>x[n-1]; nu merge din cauza nivelului de acces
     //returnam o referinta catre originalul istream pentru a putea citii cin>>a>>b>>etc
     return is;
