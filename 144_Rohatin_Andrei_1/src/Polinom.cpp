@@ -24,8 +24,7 @@ Polinom::Polinom(Polinom &&x){
 
 //Destructors
 Polinom::~Polinom(){
-	delete &coef;
-	delete &length;
+	//modificare in timpul laboratorului
 }
 //Methods
 double Polinom::GetSum(double point) {
@@ -56,8 +55,8 @@ Polinom Polinom::operator+(Polinom x) {
 		ret_obj.coef.push_back(*x_elm);
 
 	//treat the case where polynom from context is higher in grade than polynom x
-	for (; x_elm != x.coef.cend(); x_elm++)
-		ret_obj.coef.push_back(*x_elm);
+	for (; this_elm != this->coef.cend(); this_elm++)
+		ret_obj.coef.push_back(*this_elm);
 
 	return ret_obj;
 }
@@ -77,10 +76,10 @@ Polinom Polinom::operator-(Polinom x){
 	//treat the case where polynom x is higher in grade than polynom from context
 	for (; x_elm != x.coef.cend(); x_elm++)
 		ret_obj.coef.push_back(-(*x_elm));
-
+	
 	//treat the case where polynom from context is higher in grade than polynom x
-	for (; x_elm != x.coef.cend(); x_elm++)
-		ret_obj.coef.push_back(-(*x_elm));
+	for (; this_elm != this->coef.cend(); this_elm++)
+		ret_obj.coef.push_back(-(*this_elm));
 
 	return ret_obj;
 }
