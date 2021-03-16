@@ -99,9 +99,11 @@ Polinom Polinom::operator^(int pow) {
 	Polinom ret_obj;
 	ret_obj.coef = this->coef;
 	ret_obj.length = this->length;
+	Polinom aux=ret_obj;
 	--pow;
 	while (pow) {
-		ret_obj = ret_obj * ret_obj;
+		ret_obj = ret_obj * aux;
+		pow--;
 	}
 	return ret_obj;
 }
