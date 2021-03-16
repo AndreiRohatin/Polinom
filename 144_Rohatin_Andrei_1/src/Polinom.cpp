@@ -53,7 +53,8 @@ Polinom Polinom::operator+(Polinom x) {
 	//treat the case where polynom x is higher in grade than polynom from context
 	for (; x_elm != x.coef.cend(); x_elm++)
 		ret_obj.coef.push_back(*x_elm);
-
+	
+	//modificare in timpul laboratorului
 	//treat the case where polynom from context is higher in grade than polynom x
 	for (; this_elm != this->coef.cend(); this_elm++)
 		ret_obj.coef.push_back(*this_elm);
@@ -77,6 +78,7 @@ Polinom Polinom::operator-(Polinom x){
 	for (; x_elm != x.coef.cend(); x_elm++)
 		ret_obj.coef.push_back(-(*x_elm));
 	
+	//modificare in timpul laboratorului
 	//treat the case where polynom from context is higher in grade than polynom x
 	for (; this_elm != this->coef.cend(); this_elm++)
 		ret_obj.coef.push_back(-(*this_elm));
@@ -101,6 +103,7 @@ Polinom Polinom::operator^(int pow) {
 	ret_obj.length = this->length;
 	Polinom aux=ret_obj;
 	--pow;
+	//modificare in timpul laboratorului
 	while (pow) {
 		ret_obj = ret_obj * aux;
 		pow--;
